@@ -1,0 +1,79 @@
+{{#if msg}}
+  <div class="alert alert-danger">
+    {{msg}}
+  </div>
+{{/if}}
+
+<div id="wrapper">
+
+  {{#if messages.accountdone}}
+
+    {{messages.accountcreated}}
+  {{/if}}
+
+  <div class="container">
+    <img
+      class="instagramProfile"
+      src="https://images.unsplash.com/photo-1572573309811-48474d1891b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+      alt="unplashPhoto"
+    />
+    <div class="phone-app-demo"></div>
+    <div class="form-data">
+      <form action="/" method="POST">
+        <div class="logo">
+          <h1>Instagram.</h1>
+        </div>
+
+        <input type="text" name="email" placeholder="email" />
+        <input type="text" name="password" placeholder="password" />
+        <button class="form-btn" type="submit">Log in</button>
+
+        <span class="has-separator">Or</span>
+        <a href="/" class="facebook-login">
+
+          Log in with Facebook
+        </a>
+        <a class="password-reset" href="#">Forgot password?</a>
+      </form>
+      <div class="sign-up">
+        Don't an account?
+        <a href="/user/signup">Sign up</a>
+      </div>
+
+      <div class="get-the-app">
+        <span>Get the app</span>
+        <div class="badge">
+
+          <img
+            src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png"
+            alt="android App"
+          />
+          <img
+            src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png"
+            alt="ios app"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Profiles</a></li>
+          <li><a href="#">Languages</a></li>
+        </ul>
+      </nav>
+      <div class="copyright-notice">
+        &copy; 2021
+      </div>
+    </div>
+  </footer>
+
+</div>
