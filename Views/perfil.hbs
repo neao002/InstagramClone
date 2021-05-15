@@ -1,16 +1,67 @@
-<h1>Gallery for many pictures</h1>
+<header>
+
+  <div class="container">
+
+    <div class="profile">
+
+      <div class="profile-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1539681607322-8e907b3682aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          alt=""
+        />
+
+      </div>
+
+      <div class="profile-user-settings">
+
+        <h1 class="profile-user-name">Nico A.</h1>
+
+        <button class="btn profile-edit-btn">Edit Profile</button>
+
+        <button
+          class="btn profile-settings-btn"
+          aria-label="profile settings"
+        ><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+      </div>
+
+      <div class="profile-stats">
+
+        <ul>
+          <li><span class="profile-stat-count">164</span> posts</li>
+          <li><span class="profile-stat-count">188</span> followers</li>
+          <li><span class="profile-stat-count">206</span> following</li>
+        </ul>
+
+      </div>
+
+      <div class="profile-bio">
+
+        <p><span class="profile-real-name">{{user.name}}</span>
+          Travel, Coding, Family, Eat, Cook 📷✈️🏕️</p>
+
+      </div>
+
+    </div>
+    <!-- End of profile section -->
+
+  </div>
+  <!-- End of container -->
+
+</header>
+
+{{#if all_pics}}
+  {{#each all_pics}}
+    <div class="card" style="width: 18rem;">
+      <img src="/upload/{{filename}}" class="card-img-top" alt="..." />
+    </div>
+  {{/each}}
+{{/if}}
+
 <form action="/profile" method="POST" enctype="multipart/form-data">
   <label>Upload many Picture</label>
   <input type="file" name="pictures" multiple />
   <br />
   <button type="submit" class="btn btn-success">Upload All</button>
 </form>
-
-{{#if all_pics}}
-  {{#each all_pics}}
-    <div class="card" style="width: 18rem;">
-      <img src="/upload/{{filename}}" class="card-img-top" alt="..." />
-
-    </div>
-  {{/each}}
-{{/if}}
