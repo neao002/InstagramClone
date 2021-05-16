@@ -22,10 +22,6 @@ html {
   max-width: 100%;
 } */
 
-img {
-  width: 100%;
-}
-
 link styling a {
   text-decoration: none;
 }
@@ -745,6 +741,14 @@ body {
   text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
+.fa-camera {
+  font-size: 6rem;
+}
+
+.fa-plus-circle {
+  font-size: 6rem;
+}
+
 .fa-clone,
 .fa-comment {
   transform: rotateY(180deg);
@@ -752,8 +756,7 @@ body {
 
 .gallery-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  margin-bottom: 2rem;
 }
 
 /* Loader */

@@ -44,24 +44,53 @@
       </div>
 
     </div>
-    <!-- End of profile section -->
+   
 
   </div>
-  <!-- End of container -->
+ 
 
 </header>
 
-{{#if all_pics}}
-  {{#each all_pics}}
-    <div class="card" style="width: 18rem;">
-      <img src="/upload/{{filename}}" class="card-img-top" alt="..." />
-    </div>
-  {{/each}}
-{{/if}}
-
 <form action="/profile" method="POST" enctype="multipart/form-data">
-  <label>Upload many Picture</label>
+
+  <i class="fas fa-camera"></i>
   <input type="file" name="pictures" multiple />
   <br />
   <button type="submit" class="btn btn-success">Upload All</button>
 </form>
+ {{#if all_pics}}
+    {{#each all_pics}}
+
+<main>
+
+	<div class="container">
+
+		<div class="gallery">
+      
+
+			<div class="gallery-item" tabindex="0">
+        
+
+				<img src="/upload/{{filename}}" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+					</ul>
+          
+
+				</div>
+         
+
+			</div>
+        
+  </div>
+</main>
+{{/each}}
+      {{/if}}
+
+
+
+
