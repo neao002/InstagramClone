@@ -929,3 +929,28 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
   }
 }
+
+#hide input[type="file"] {
+  display: none;
+  margin: 10px;
+  background: yellow;
+}
+#hide input[type="file"] + label {
+  display: inline-block;
+  margin: 20px;
+  padding: 4px 32px;
+  background-color: #d30d0d;
+  border: solid 1px #666f77;
+  border-radius: 6px;
+  color: #666f77;
+}
+#hide input[type="file"]:active + label {
+  background-image: none;
+  background-color: #2d6c7a;
+  color: #ffffff;
+}
+
+.fa-camera {
+  font-size: 6rem;
+  color: #00a0f7;
+}

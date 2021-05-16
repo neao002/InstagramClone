@@ -64,13 +64,9 @@ router.get("/profile", (req, res) => {
 });
 router.post("/profile", upload.array("pictures"), (req, res) => {
   console.log(req.files);
-  const all_pics = req.files; // array of picture objects
+  const all_pics = req.files;
   const userId = req.session.user._id;
-  /**
-   * 1. check if user has something in gallery
-   * 2. add old data + new data (e.g push())
-   * 3. update the gallery with new array
-   */
+
   UserLogin.findByIdAndUpdate(
     userId,
     { $push: { gallery: all_pics } },
@@ -85,10 +81,10 @@ router.post("/profile", upload.array("pictures"), (req, res) => {
 router.use("/", index);
 router.use("/", userRoute);
 
+router.get("*", (req, res) => {
+  res.render("error");
+});
+
 router.listen(PORT, () => {
   console.log("server is running on " + PORT);
 });
-
-// router.get("*", (req, res) => {
-//   res.render("error");
-// });

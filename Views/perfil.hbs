@@ -51,13 +51,19 @@
 
 </header>
 
-<form action="/profile" method="POST" enctype="multipart/form-data">
 
-  <i class="fas fa-camera"></i>
-  <input type="file" name="pictures" multiple />
-  <br />
-  <button type="submit" class="btn btn-success">Upload All</button>
+<form class="upload-form" action="/profile" method="POST" enctype="multipart/form-data">
+<div id="hide" class="col-lg-8 col-xs-8">
+   <label class="hand-cursor">
+    <input name="pictures" type="file" nv-file-select uploader="$ctrl.uploader"/>
+    <span class="fa fa-camera"></span>
+    <span class="photo_text hidden-xs"></span>
+     </label>
+     <button type="submit" class="btn btn-success">.</button>
+</div>
 </form>
+
+
  {{#if all_pics}}
     {{#each all_pics}}
 
