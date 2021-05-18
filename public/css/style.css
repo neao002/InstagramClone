@@ -15,12 +15,11 @@ html {
   box-sizing: border-box;
 }
 
-/*Smartphone image*/
-/* img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-} */
+a {
+  text-decoration: none;
+  size: 2rem;
+  color: #030303;
+}
 
 link styling a {
   text-decoration: none;
@@ -30,7 +29,7 @@ link styling a {
   position: absolute;
   width: 20%;
   height: 40%;
-  top: 30%;
+  top: 10%;
   border-radius: 5%;
 }
 
@@ -703,7 +702,7 @@ body {
   position: relative;
   flex: 1 0 22rem;
   margin: 1rem;
-  color: #fff;
+  color: rgb(240, 224, 224);
   cursor: pointer;
 }
 
@@ -760,16 +759,6 @@ body {
 }
 
 /* Loader */
-
-.loader {
-  width: 5rem;
-  height: 5rem;
-  border: 0.6rem solid #999;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: loader 500ms linear infinite;
-}
 
 /* Media Query */
 

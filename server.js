@@ -19,20 +19,6 @@ router.use(
   })
 );
 
-// multer Settings
-
-const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, "public/upload");
-  },
-
-  filename: function (req, file, callback) {
-    callback(null, Date.now() + "_" + file.originalname);
-  },
-});
-const upload = multer({ storage });
-
 //session
 const session = require("express-session");
 
@@ -45,36 +31,10 @@ router.use(
   session({
     secret: "im NicoSpy",
     cookie: {
-      maxAge: 100 * 60 * 10,
+      maxAge: 900 * 60 * 10,
     },
   })
 );
-
-//modals
-
-const UserLogin = require("./Models/logIn");
-
-// multer adding photos
-
-router.get("/profile", (req, res) => {
-  const userId = req.session.user._id;
-  UserLogin.findById(userId, (err, user) => {
-    res.render("perfil", { all_pics: user.gallery });
-  });
-});
-router.post("/profile", upload.array("pictures"), (req, res) => {
-  console.log(req.files);
-  const all_pics = req.files;
-  const userId = req.session.user._id;
-
-  UserLogin.findByIdAndUpdate(
-    userId,
-    { $push: { gallery: all_pics } },
-    (err, user) => {
-      res.redirect("/profile");
-    }
-  );
-});
 
 // app Listen
 

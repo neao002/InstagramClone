@@ -7,7 +7,7 @@
       <div class="profile-image">
 
         <img
-          src="https://images.unsplash.com/photo-1539681607322-8e907b3682aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          src="/upload/{{user.my_picture}}"
           alt=""
         />
 
@@ -15,14 +15,16 @@
 
       <div class="profile-user-settings">
 
-        <h1 class="profile-user-name">Nico A.</h1>
+        <h1 class="profile-user-name">{{user.name}}</h1>
 
-        <button class="btn profile-edit-btn">Edit Profile</button>
+        
+        <td class="text-center"><button class="btn profile-edit-btn"><a class="editProfile" href="/profile/upload">EditPic</a></button>
 
         <button
           class="btn profile-settings-btn"
           aria-label="profile settings"
-        ><i class="fas fa-cog" aria-hidden="true"></i></button>
+        ><i class="fas fa-cog" aria-hidden="true"><a href="/logout">Logout</a></i></button>
+        
 
       </div>
 
@@ -55,7 +57,7 @@
 <form class="upload-form" action="/profile" method="POST" enctype="multipart/form-data">
 <div id="hide" class="col-lg-8 col-xs-8">
    <label class="hand-cursor">
-    <input name="pictures" type="file" nv-file-select uploader="$ctrl.uploader"/>
+    <input name="pictures" type="file" nv-file-select uploader="$ctrl.uploader" multiple/>
     <span class="fa fa-camera"></span>
     <span class="photo_text hidden-xs"></span>
      </label>
@@ -64,38 +66,49 @@
 </form>
 
 
- {{#if all_pics}}
-    {{#each all_pics}}
 
 <main>
-
+   {{#if all_pics}}
+           {{#each all_pics}}
+  
 	<div class="container">
 
+    
 		<div class="gallery">
-      
+     
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item">
+        
+ 
         
 
-				<img src="/upload/{{filename}}" class="gallery-image" alt="">
+				<img src="/upload/{{this.filename}}" class="gallery-image" alt="">
 
 				<div class="gallery-item-info">
 
 					<ul>
 						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
 						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+             <td class="text-center"><button class="btn btn-danger"><a href="/profile/delete/{{_id}}">Delete</a></button>
 					</ul>
+
           
+         
+    
 
 				</div>
-         
+     
+       
 
 			</div>
-        
+          
+    
   </div>
+    {{/each}}
+    {{/if}}
+     
 </main>
-{{/each}}
-      {{/if}}
+
 
 
 
