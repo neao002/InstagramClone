@@ -1,1 +1,1 @@
-Basic App created with NodeJs, HBS
+Instagram App created with NodeJs and Handlebars
